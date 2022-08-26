@@ -1,0 +1,512 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* VARIABLES DEL CSS */
+:root{
+    --header-height: 3rem;
+    --hue-color: 227;
+
+    /* Colores */
+    --first-color: #c2deff;
+    --first-color-second: #d5dbff;
+    --first-alternativo: #a0c6ff;
+    --first-claro: rgb(23, 86, 202);
+    --first-color-50: #94c6f5;
+    --title-color: #1a50c5;
+    --text-color: #0a0a0a;
+    --text-claro: #0a0a0a;
+    --input-color: #d5deff;
+    --input-invalid: #dbe8ff;
+    --body-color: #ebefff;
+    --shadow-color: rgba(0,0,0,0.15);
+    --contenedor-color: #fff;
+    --error-message: rgb(228, 26, 26);
+    --invalid-input-text: rgb(15, 62, 216);
+
+    /* FUENTE Y TIPOGRAFÍA */
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px, 2rem = 32px ... */
+    --fuente-grande: 2rem;
+    --fuente-normal: .938rem;
+    --fuente-pequeña: .813rem;
+    --fuente-pequeña-2: .75rem;
+    --h1: 1.5rem;
+    --h2: 1.25rem;
+    --h3: 1.125rem;
+
+    /* GROSOR DE LA FUENTE */
+    --font-medium: 500;
+    --font-semibold: 600;
+
+    /* MARGENES */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /* z index */
+    --z-tooltip:10;
+    --z-modal:1000;
+    --z-fixed: 100;
+    --z-back: -10;
+}
+
+/* FUENTES PARA PANTALLAS MÁS GRANDES */
+
+@media (min-width: 968px) {
+    :root{
+        --fuente-grande: 3rem;
+        --fuente-normal: 1rem;
+        --fuente-pequeña: .875rem;
+        --fuente-pequeña-2: .813rem;
+        --h1: 2.25rem;
+        --h2: 1.5rem;
+        --h3: 1.25rem;
+    }
+    
+}
+
+
+ /* CSS GENERAL */
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: var(--fuente-normal);
+    align-items: center;
+    justify-content: center;
+    background-color: #ebefff;
+}
+
+h1,h2,h3,h4{
+    color: var(--title-color);
+    font-weight: var(--font-semibold);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    color: var(--text-claro);
+    font-weight: var(---fuente-pequeña);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration:none;
+}
+
+.conversor-imagen{
+    width: 150px;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: 0px auto;
+}
+
+.moneda{
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.moneda select{
+    padding: 10px 20px 10px 10px;
+    border: 1px solid var(--title-color);
+    font-size: 16px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.moneda input {
+    border: 0;
+    font-size: 30px;
+    text-align: right;
+}
+
+.taza-cambio-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cambio{
+    font-size: 14px;
+    padding: 0 10px;
+    font-weight: 600;
+}
+
+select:focus, input:focus, button:focus{
+    outline: 0;
+}
+
+
+ /* CLASES REUSABLES DE CSS */
+.section{
+    padding: 2rem 0 4rem;
+}
+.section-title{
+    font-size: var(--h1);
+}
+.section-subtitle{
+        display: block;
+        font-size: var(---fuente-pequeña);
+        margin-bottom: var(--mb-3);
+}
+
+.section-title, 
+.section-subtitle{
+        text-align: center;
+}
+
+ /* LAYOUT */
+.container{
+        max-width: 48rem;
+        margin-left: var(--mb-1-5);
+        margin-right: var(--mb-1-5);
+}
+.grid{
+        display:grid;
+        gap: 1.5rem;
+}
+
+.header{
+        width: 100%;
+        position:fixed;
+        bottom: 0;
+        left: 0;
+        z-index: var(--z-fixed);
+        background-color: var(--body-color);
+}
+
+ /* --------------- NAVEGACIÓN --------------- */
+    .nav{
+            max-width:968rem;
+            height:var(--header-height);
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+    }
+
+    .nav-logo,
+    .nav-toggle{
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+    }
+
+    .nav-logo:hover{
+            color: var(--first-color);
+    }
+    .nav-toggle{
+            font-size: 1.1rem;
+            cursor: pointer;
+    }
+    .nav-toggle:hover{
+            color: var(--first-color);
+    }
+
+    @media screen and (max-width: 768px){
+        .nav-menu{
+            position:fixed;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--body-color);
+            padding: 2rem 1.5rem 4rem;
+            box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
+            border-radius:  1.5rem 1.5rem 0 0;
+            transition: .4s;
+        }
+        
+    }
+
+    .nav-list{
+        grid-template-columns: repeat(3,1fr);
+        gap:2rem;
+    }
+    .nav-link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: var(--fuente-pequeña);
+        color: var(--title-color);
+        font-weight: var(--font-medium);
+    }
+    .nav-link:hover{
+        color: var(--first-color);
+    }
+
+    .nav-icon{
+        font-size: 1.2rem;
+    }
+
+    .nav-close{
+        position: absolute;
+        right: 1.3rem;
+        bottom: 0.5em;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--first-color);
+    }
+    .nav-close:hover{
+        color: var(--first-alternativo);
+    }
+
+     /* MOSTRAR MENÚ */
+    .show-menu{
+            bottom: 0;
+    }
+/* --------------- Cambiar header --------------- */
+.scroll-header{
+    box-shadow:0 -1px 4px rgba(0,0,0,0.15);
+}
+
+/* BOTONES */
+
+.button, .btn{
+    display:inline-block;
+    background-color: var(--input-color);
+    border-radius: .5rem;
+    padding: 1rem;
+    font-weight: var(--fuente-medium);
+    display:block;
+    border:none;
+    outline: none;
+    -webkit-text-emphasis-color: var(--text-claro);
+    text-emphasis-color: var(--text-claro);
+}
+
+.button:hover{
+    background-color: var(--first-alternativo);
+}
+.button-icon{
+    font-size: 1.25rem;
+    margin-left: var(--mb-0-5);
+    transition: .3s;
+}
+.button-flex{
+    display: inline-flex;
+    align-items: center;
+}
+.button-small{
+    padding: .5rem 1rem;
+
+}
+
+
+/*-------------------CONTACT----------------------*/
+.contact-content{
+    background-color: var(--input-color);
+    border-radius: .5rem;
+    padding: .1rem 1rem .25rem;
+    margin-bottom: var(--mb-3);
+}
+.contact-label{
+    font-size: var(--fuente-pequeña-2);
+    color:var(--title-color);
+}
+.contact-input{
+    width: 100%;
+    font-size: var(--fuente-normal);
+    font-weight: var(--font-semibold);
+    font-family: var(--body-font);
+    border: none;
+    resize: none;
+    padding: .25rem .5rem .5rem 0;
+    outline: none;
+    background-color: var(--input-color);
+    color: var(--text-claro);
+}
+
+.contact-btn{
+    display:block;
+    border:none;
+    outline: none;
+    margin-left: auto;
+}
+
+/* INPUTS NO VÁLIDAS */
+.invalid-input{
+    background-color: var(--input-invalid);
+}
+.invalid-input .contact-input{
+    background-color: var(--input-invalid);
+    color: var(--invalid-input-text);
+} 
+.error-message{
+    font-size: var(--fuente-pequeña-2);
+    color:var(--error-message);
+}
+/* ------------- FOOTER ---------------- */
+.footer{
+    padding-top:2rem;
+}
+.footer-container{
+    row-gap:3.5rem;
+}
+
+.footer-bg{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--first-color-second);
+    padding: 2rem 0 3rem;
+}
+
+.footer-title{
+    font-size: var(--h1);
+    margin-bottom: var(--mb-0-25);
+    text-align: center;
+    justify-content: center;
+}
+.footer-subtitle{
+    font-size: var(--fuente-pequeña);
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-links li{
+    margin-bottom: var(--mb-1);
+    text-align: center;
+    justify-content: center;
+}
+.footer-link:hover{
+color: var(--first-claro);
+text-align: center;
+    justify-content: center;
+}
+
+.footer-social{
+    font-size: 1.25rem;
+    margin-right: var(--mb-1-5);
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-social:hover{
+    color: var(--first-claro);
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-copy{
+    font-size: var(--fuente-pequeña);
+    text-align: center;
+    color: #FFF;
+    margin-top: var(--mb-3);
+    justify-content: center;
+}
+.footer-title,
+.footer-subtitle,
+.footer-link,
+.footer-social{
+    color:#0a0a0a;
+    text-align: center;
+    justify-content: center;
+}
+
+/* -----------------------MEDIA QUERIES-------------------- */
+/* Para pantallas muy angostas: Galaxy Fold*/
+@media screen and (max-width:400px){ 
+        .container{
+            margin-left: var(--mb-1);
+            margin-right: var(--mb-1);
+        }
+        .button{
+            font-size: .7rem;
+        }
+        .button-icon{
+            font-size: .8rem;
+        }
+    
+}
+
+ /* PARA PANTALLAS MEDIANAS */
+@media screen and (min-width:568px){ 
+
+        .footer-container{
+            grid-template-columns:repeat(2, 1fr);
+        }
+    }
+
+@media screen and (min-width:770px){ 
+    .container{
+        margin: 0 auto;
+    }
+    body{
+        margin:0;
+    }
+    
+    .header{
+        top:0;
+        bottom: initial;
+    }
+
+    .header,
+    .footer-container{
+        padding: 0 1rem;
+}
+
+    .footer-container{
+        grid-template-columns:repeat(3, 1fr);
+        column-gap: 8rem;
+}
+    .footer-bg{
+        width: 100%;
+        padding: 3rem 0 3.5rem;
+        margin: 0;
+}
+    .footer-links{
+        flex-direction: row;
+        column-gap: 2rem;
+}
+    .footer-socials{
+        justify-self: flex-end;
+}
+    .footer-copy{
+        margin-top: 4.5rem;
+    }
+}
+
+ /* PARA DISPOSITIVOS CON PANTALLAS GRANDES */
+    @media screen and (min-width:1024px){
+        .container{
+            max-width: 50rem;
+    }
+        .header,
+        .main,
+        .footer-container{
+        padding: 0;
+    }
+}
