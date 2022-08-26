@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<!-- Head -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Luna Bianchi Borches">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="copyright" content="Luna Bianchi Borches">
+        <meta name="robots" content="index, follow">
+        <link rel="stylesheet" href="assets/css/styles.css" type="text/css" media="all">
+        <link rel="shortcut icon" href="img/iconpestana.png">
+        <script language="javascript" src="assets/js/validaciones.js" type="text/javascript"> </script>
+        <title>Conversor de Moneda | Luna Bianchi Borches</title>
+<!-- icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"/>
+<script src="https://kit.fontawesome.com/f570856479.js" crossorigin="anonymous"></script>
+
+<!-- CSS PERSONALIZADO -->
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<!-- MAIN -->
+<main class="main">
+<!-- HOME -->
+<section class="home section" id="home">
+    <div class="home-container container grid">
+    <div class="home-content grid">
+        <div class="home-data">
+            <img src="img/icono.png" alt="" class="conversor-imagen">
+            <h1 class="home-title">Conversor Moneda</h1>
+            <p class="home-subtitle">Escoje la moneda y la cantidad para realizar la conversion</p>
+            <div class="container grid">
+                <div class="moneda">
+                    <select id="moneda-uno" title="moneda">
+                        <option value="AED">AED</option>
+                        <option value="ARS">ARS</option>
+                        <option value="AUD">AUD</option>
+                        <option value="BGN">BGN</option>
+                        <option value="BRL">BRL</option>
+                        <option value="BSD">BSD</option>
+                        <option value="CAD">CAD</option>
+                        <option value="CHF">CHF</option>
+                        <option value="CLP">CLP</option>
+                        <option value="CNY">CNY</option>
+                        <option value="COP">COP</option>
+                        <option value="CZK">CZK</option>
+                        <option value="DKK">DKK</option>
+                        <option value="DOP">DOP</option>
+                        <option value="EGP">EGP</option>
+                        <option value="EUR">EUR</option>
+                        <option value="FJD">FJD</option>
+                        <option value="GBP">GBP</option>
+                        <option value="GTQ">GTQ</option>
+                        <option value="HKD">HKD</option>
+                        <option value="HRK">HRK</option>
+                        <option value="HUF">HUF</option>
+                        <option value="IDR">IDR</option>
+                        <option value="ILS">ILS</option>
+                        <option value="INR">INR</option>
+                        <option value="ISK">ISK</option>
+                        <option value="JPY">JPY</option>
+                        <option value="KRW">KRW</option>
+                        <option value="KZT">KZT</option>
+                        <option value="MXN">MXN</option>
+                        <option value="MYR">MYR</option>
+                        <option value="NOK">NOK</option>
+                        <option value="NZD">NZD</option>
+                        <option value="PAB">PAB</option>
+                        <option value="PEN">PEN</option>
+                        <option value="PHP">PHP</option>
+                        <option value="PKR">PKR</option>
+                        <option value="PLN">PLN</option>
+                        <option value="PYG">PYG</option>
+                        <option value="RON">RON</option>
+                        <option value="RUB">RUB</option>
+                        <option value="SAR">SAR</option>
+                        <option value="SEK">SEK</option>
+                        <option value="SGD">SGD</option>
+                        <option value="THB">THB</option>
+                        <option value="TRY">TRY</option>
+                        <option value="TWD">TWD</option>
+                        <option value="UAH">UAH</option>
+                        <option value="USD" selected>USD</option>
+                        <option value="UYU">UYU</option>
+                        <option value="VND">VND</option>
+                        <option value="ZAR">ZAR</option>
+        
+                    </select>
+        
+                    <input 
+                    type="number" 
+                    id="cantidad-uno" 
+                    placeholder="0"  
+                    value="1"
+                    >
+        
+                </div>
+        
+                <div class="taza-cambio-container">
+                    <button type="button" class="btn" id="taza">
+                        cambio
+                    </button>
+        
+                    <div class="cambio" id="cambio"></div>
+        
+                </div>
+        
+                <div class="moneda">
+                    <select id="moneda-dos" title="moneda">
+                        <option value="AED">AED</option>
+                        <option value="ARS" selected>ARS</option>
+                        <option value="AUD">AUD</option>
+                        <option value="BGN">BGN</option>
+                        <option value="BRL">BRL</option>
+                        <option value="BSD">BSD</option>
+                        <option value="CAD">CAD</option>
+                        <option value="CHF">CHF</option>
+                        <option value="CLP">CLP</option>
+                        <option value="CNY">CNY</option>
+                        <option value="COP">COP</option>
+                        <option value="CZK">CZK</option>
+                        <option value="DKK">DKK</option>
+                        <option value="DOP">DOP</option>
+                        <option value="EGP">EGP</option>
+                        <option value="EUR">EUR</option>
+                        <option value="FJD">FJD</option>
+                        <option value="GBP">GBP</option>
+                        <option value="GTQ">GTQ</option>
+                        <option value="HKD">HKD</option>
+                        <option value="HRK">HRK</option>
+                        <option value="HUF">HUF</option>
+                        <option value="IDR">IDR</option>
+                        <option value="ILS">ILS</option>
+                        <option value="INR">INR</option>
+                        <option value="ISK">ISK</option>
+                        <option value="JPY">JPY</option>
+                        <option value="KRW">KRW</option>
+                        <option value="KZT">KZT</option>
+                        <option value="MXN">MXN</option>
+                        <option value="MYR">MYR</option>
+                        <option value="NOK">NOK</option>
+                        <option value="NZD">NZD</option>
+                        <option value="PAB">PAB</option>
+                        <option value="PEN">PEN</option>
+                        <option value="PHP">PHP</option>
+                        <option value="PKR">PKR</option>
+                        <option value="PLN">PLN</option>
+                        <option value="PYG">PYG</option>
+                        <option value="RON">RON</option>
+                        <option value="RUB">RUB</option>
+                        <option value="SAR">SAR</option>
+                        <option value="SEK">SEK</option>
+                        <option value="SGD">SGD</option>
+                        <option value="THB">THB</option>
+                        <option value="TRY">TRY</option>
+                        <option value="TWD">TWD</option>
+                        <option value="UAH">UAH</option>
+                        <option value="USD">USD</option>
+                        <option value="UYU">UYU</option>
+                        <option value="VND">VND</option>
+                        <option value="ZAR">ZAR</option>
+        
+                    </select>
+        
+                    <input 
+                    type="number" 
+                    id="cantidad-dos" 
+                    placeholder="0"  
+                    >
+        
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        </div>
+</section>
+
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+    <h2 class="section-title">Contacto</h2>
+    <span class="section-subtitle">Creemos algo juntos</span>
+
+    <div class="contact-container container grid">
+        <form action="" class="contact-form">
+        <div class="contact-content">
+            <label for="name" class="contact-label">Nombre</label>
+            <input type="text" name="name" class="contact-input" required pattern="[\s\S]{6,25}" minlength="6" maxlength="25" data-tipo="nombre" placeholder="━">
+            <span class="error-message"></span>
+        </div>
+        <div class="contact-content">
+            <label for="email" class="contact-label">Email</label>
+            <input type="email" name="email" class="contact-input" required data-tipo="email" placeholder="━">
+            <span class="error-message"></span>
+        </div>
+        <div class="contact-content">
+            <label for="asunto" class="contact-label">Asunto</label>
+            <input type="text" name="asunto" class="contact-input" required pattern="[\s\S]{10,40}" minlength="10" maxlength="40" data-tipo="asunto" placeholder="━">
+            <span class="error-message"></span>
+        </div>
+        <div class="contact-content">
+            <label for="mensaje" class="contact-label">Mensaje</label>
+            <textarea
+            name="mensaje"
+            cols="0"
+            rows="10"
+            class="contact-input"
+            required
+            pattern="[\s\S]{20,200}" 
+            minlength="20"
+            maxlength="200"
+            data-tipo="mensaje"
+            id="textarea"
+            placeholder="━"></textarea>
+            <span class="error-message"></span>
+        </div>
+
+        <input
+            type="submit"
+            value="Enviar Mensaje"
+            class="contact-btn button"/>
+        </form>
+    </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+    <div class="footer-bg">
+        <div class="footer-container container grid">
+        <div>
+            <h1 class="footer-title">Luna</h1>
+            <span class="footer-subtitle">Desarrolladora Web</span>
+        </div>
+
+        <div class="footer-socials">
+            <a href="https://linkedin.com/in/luna-bianchi-borches-005801205/" target="_blank" class="footer-social">
+            <i class="bi bi-linkedin"></i></a>
+            
+            <a href="https://github.com/lunabianchib" target="_blank" class="footer-social">
+            <i class="bi bi-github"></i></a>
+            
+            <a href="https://www.instagram.com/luna_bianchib/" target="_blank" class="footer-social">
+            <i class="bi bi-instagram"></i></a>
+            
+        </div>
+        </div>
+    </div>
+    </footer>
+</main>
+
+<!-- SCROLL REVEAL -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<!-- MAIN JS -->
+<script src="assets/js/main.js"></script>
+<!-- CONTACT VALIDATION -->
+<script src="assets/js/app.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
