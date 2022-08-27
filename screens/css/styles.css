@@ -449,6 +449,13 @@ text-align: center;
         .button-icon{
             font-size: .8rem;
         }
+        .nav-menu{
+            padding:2rem .25rem 4rem;
+        }
+        .nav-list{
+            column-gap:0;
+        }
+
     
 }
 
@@ -468,6 +475,10 @@ text-align: center;
         margin:0;
     }
     
+    .section-subtitle{
+        margin-bottom: 4rem;
+    }
+
     .header{
         top:0;
         bottom: initial;
@@ -476,7 +487,11 @@ text-align: center;
     .header,
     .footer-container{
         padding: 0 1rem;
-}
+    }
+
+    .scroll-header{
+        box-shadow:0 1px 4px rgba(0,0,0,0.15);
+    }
 
     .footer-container{
         grid-template-columns:repeat(3, 1fr);
